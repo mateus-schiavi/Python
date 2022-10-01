@@ -2,7 +2,7 @@
 
 # Import the functions from the Draw 2-D library
 # so that they can be used in this program.
-from draw2d import \
+from draw2D import \
     start_drawing, draw_line, draw_oval, draw_arc, \
     draw_rectangle, draw_polygon, draw_text, finish_drawing
 
