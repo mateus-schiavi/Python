@@ -7,8 +7,8 @@ from draw2d import \
 
 def main():
     # Measurement for window
-    scene_width = 800
-    scene_height = 500
+    scene_width = 1280
+    scene_height = 720
 
     # Creating a window
     canvas = start_drawing("Scene", scene_width, scene_height)
