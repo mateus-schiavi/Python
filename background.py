@@ -48,7 +48,7 @@ def draw_sky(canvas, scene_width, scene_height):
 def draw_ground(canvas, scene_width, scene_height):
     """Draw the ground and all the objects on the ground."""
     draw_rectangle(canvas, 0, 0,
-        scene_width, scene_height / 3, width=0, fill="tan4")
+        scene_width, scene_height / 4, width=0, fill="tan4")
 
     # Draw a pine tree.
     tree_center_x = 170
