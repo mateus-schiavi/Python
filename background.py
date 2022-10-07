@@ -104,6 +104,8 @@ def draw_pine_tree(canvas, center_x, bottom, height):
 def draw_cloud(canvas, x, y):
     draw_oval(canvas, x, y, x+125, y+70, outline="white", fill="white")
 
+def draw_grass(canvas, x, y):
+    draw_rectangle(canvas,x,y,x+2,y+3, outline="green", fill="darkgreen")
 # Call the main function so that
 # this program will start executing.
 main()
