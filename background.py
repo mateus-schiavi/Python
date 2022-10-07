@@ -1,4 +1,4 @@
-# Importing functions
+
 import random
 import math
 from draw2d import \
@@ -6,14 +6,11 @@ from draw2d import \
     draw_rectangle, draw_polygon, draw_text, finish_drawing
 
 def main():
-    # Measurement for window
     scene_width = 800
     scene_height = 500
 
-    # Creating a window
     canvas = start_drawing("Scene", scene_width, scene_height)
 
-    # Calling functions
     draw_sky(canvas, scene_width, scene_height)
     draw_sun(canvas, 125, 75)
     draw_cloud(canvas, 600, 350)
@@ -33,14 +30,11 @@ def main():
     draw_pine_tree(canvas, 130, 150, 130)
     draw_pine_tree(canvas, 90, 150, 90)
     draw_pine_tree(canvas, 115, 150, 115)
-    # draw_grid(canvas, scene_width, scene_height, 50) (COMMENTING OUT DRAW_GRID)
 
 
-    # Call the finish_drawing function
     finish_drawing(canvas)
 
 
-# Defining functions  
 def draw_sky(canvas, scene_width, scene_height):
     draw_rectangle(canvas, 0, scene_height / 3,
         scene_width, scene_height, width=0, fill="deepskyblue")
@@ -56,7 +50,7 @@ def draw_grass(canvas, x, y):
     draw_rectangle(canvas,x,y,x+2,y+3, outline="green", fill="darkgreen")
 
 def draw_pine_tree(canvas, center_x, buttom, height):
-    # Draw the trunk of the tree
+
     trunk_width = height / 5
     trunk_height = height / 15
     left_trunk = center_x - trunk_width / 15
@@ -65,7 +59,6 @@ def draw_pine_tree(canvas, center_x, buttom, height):
     trunk_top = buttom + trunk_height
     draw_rectangle(canvas, left_trunk, buttom_trunk, right_trunk, trunk_top, fill = 'tan4')
     
-    # Draw the skirt of the tree
     skirt_width = height / 2
     skirt_left = center_x - skirt_width / 5
     skirt_buttom = trunk_top
@@ -89,5 +82,4 @@ def draw_grid(canvas, width, height, interval, color= 'blue'):
         draw_text(canvas, label_x, y, f"{y}", fill=color)
 
 
-# Calling the main function
 main()
