@@ -20,6 +20,15 @@ def main():
     draw_ground(canvas, scene_width, scene_height)
     draw_cloud(canvas, 525, 400)
     draw_cloud(canvas, 450, 350)
+    draw_cloud(canvas, 525, 400)
+    draw_cloud(canvas, 450, 350)
+    draw_cloud(canvas, 525, 400)
+    draw_cloud(canvas, 450, 350)
+    draw_pine_tree(canvas, 125, 150, 125)
+    draw_pine_tree(canvas, 125, 150, 125)
+    draw_pine_tree(canvas, 125, 150, 125)
+    draw_pine_tree(canvas, 125, 150, 125)
+    
     # Call the finish_drawing function
     # in the draw2d.py library.
     finish_drawing(canvas)
