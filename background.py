@@ -86,7 +86,7 @@ def draw_pine_tree(canvas, center_x, bottom, height):
             outline="gray20", width=1, fill="dark green")
 
 def draw_cloud(canvas, x, y):
-    draw_polygon(canvas, x, y, x+100, y+50, outline="white", fill="white")
+    draw_oval(canvas, x, y, x+125, y+70, outline="white", fill="white")
 
 # Call the main function so that
 # this program will start executing.
