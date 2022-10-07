@@ -74,7 +74,7 @@ def draw_pine_tree(canvas, center_x, buttom, height):
     peak_x = center_x
     peak_y = buttom + height
     skirt_right = center_x + skirt_width / 5
-    draw_polygon(canvas, skirt_left, skirt_buttom, peak_x, peak_y, skirt_right, skirt_buttom, fill = 'forestGreen')
+    draw_polygon(canvas, skirt_left, skirt_buttom, peak_x, peak_y, skirt_right, skirt_buttom, fill = 'darkOrchid4')
 
 def draw_cloud(canvas, x, y):
     draw_oval(canvas, x, y, x+100, y+50, outline="white", fill="white")
