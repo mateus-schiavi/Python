@@ -65,7 +65,7 @@ def draw_pine_tree(canvas, center_x, buttom, height):
     buttom_trunk = buttom
     right_trunk = center_x + trunk_width / 15
     trunk_top = buttom + trunk_height
-    draw_rectangle(canvas, left_trunk, buttom_trunk, right_trunk, trunk_top, fill = 'tan4')
+    draw_rectangle(canvas, left_trunk, buttom_trunk, right_trunk, trunk_top, fill = "palevioletRed4")
     
     # Draw the skirt of the tree
     skirt_width = height / 2
