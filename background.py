@@ -15,7 +15,7 @@ def main():
 
     # Calling functions
     draw_sky(canvas, scene_width, scene_height)
-    draw_sun(canvas, 125, 125)
+    draw_sun(canvas, 125, 275)
     draw_cloud(canvas, 600, 350)
     draw_cloud(canvas, 575, 325)
     draw_cloud(canvas, 550, 325)
