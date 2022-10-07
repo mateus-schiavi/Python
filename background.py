@@ -55,7 +55,7 @@ def draw_ground(canvas, scene_width, scene_height):
         scene_width, scene_height / 3, width=0, fill="green")
     
 def draw_grass(canvas, x, y):
-    draw_rectangle(canvas,x,y,x+2,y+3, outline="green", fill="darkgreen")
+    draw_rectangle(canvas,x,y,x+2,y+3, outline="lavender", fill="mediumPurple1")
 
 def draw_pine_tree(canvas, center_x, buttom, height):
     # Draw the trunk of the tree
