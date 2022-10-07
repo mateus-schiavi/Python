@@ -18,13 +18,16 @@ def main():
     # Call the draw_sky and draw_ground functions in this file.
     draw_sky(canvas, scene_width, scene_height)
     draw_ground(canvas, scene_width, scene_height)
-
+    draw_moon(canvas, 125, 75)
     # Call the finish_drawing function
     # in the draw2d.py library.
     finish_drawing(canvas)
 
-
 def draw_sky(canvas, scene_width, scene_height):
+    draw_rectangle(canvas, 0, scene_height / 3,
+        scene_width, scene_height, width=0, fill="deepskyblue")
+
+def draw_moon(canvas, scene_width, scene_height):
     """Draw the sky and all the objects in the sky."""
     draw_rectangle(canvas, 0, scene_height / 3,
         scene_width, scene_height, width=0, fill="sky blue")
