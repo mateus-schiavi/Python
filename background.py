@@ -29,7 +29,7 @@ def main():
     draw_ground(canvas, scene_width, scene_height)
     for i in range(2000):
         x=random.randint(0, scene_width)
-        y=random.randint(0, math.ceil(scene_height / 4))
+        y=random.randint(0, math.ceil(scene_height / 3))
         draw_grass(canvas, x, y)
     draw_pine_tree(canvas, 125, 150, 125)
     draw_pine_tree(canvas, 125, 150, 125)
@@ -50,7 +50,7 @@ def draw_sky(canvas, scene_width, scene_height):
 def draw_ground(canvas, scene_width, scene_height):
     """Draw the ground and all the objects on the ground."""
     draw_rectangle(canvas, 0, 0,
-        scene_width, scene_height / 4, width=0, fill="tan4")
+        scene_width, scene_height / 3, width=0, fill="tan4")
 
     # Draw a pine tree.
     tree_center_x = 170
