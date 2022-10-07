@@ -23,11 +23,10 @@ def main():
     # in the draw2d.py library.
     finish_drawing(canvas)
 
-def draw_sky(canvas, scene_width, scene_height):
-    draw_rectangle(canvas, 0, scene_height / 3,
-        scene_width, scene_height, width=0, fill="deepskyblue")
+def draw_sun(canvas, x, y):
+    draw_oval(canvas, x, y, x+150, y+150, outline="yellow", fill="white")
 
-def draw_moon(canvas, scene_width, scene_height):
+def draw_sky(canvas, scene_width, scene_height):
     """Draw the sky and all the objects in the sky."""
     draw_rectangle(canvas, 0, scene_height / 3,
         scene_width, scene_height, width=0, fill="sky blue")
