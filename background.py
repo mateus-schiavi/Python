@@ -18,12 +18,12 @@ def main():
     # Call the draw_sky and draw_ground functions in this file.
     draw_sky(canvas, scene_width, scene_height)
     draw_ground(canvas, scene_width, scene_height)
-    draw_moon(canvas, 125, 75)
+    draw_sun(canvas, 125, 75)
     # Call the finish_drawing function
     # in the draw2d.py library.
     finish_drawing(canvas)
 
-def draw_moon(canvas, x, y):
+def draw_sun(canvas, x, y):
     draw_oval(canvas, x, y, x+150, y+150, outline="yellow", fill="white")
 
 def draw_sky(canvas, scene_width, scene_height):
