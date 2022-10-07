@@ -24,6 +24,11 @@ def main():
     draw_cloud(canvas, 450, 350)
     draw_cloud(canvas, 525, 400)
     draw_cloud(canvas, 450, 350)
+    draw_ground(canvas, scene_width, scene_height)
+    for i in range(2000):
+        x=random.randint(0, scene_width)
+        y=random.randint(0, math.ceil(scene_height / 4))
+        draw_grass(canvas, x, y)
     draw_pine_tree(canvas, 125, 150, 125)
     draw_pine_tree(canvas, 125, 150, 125)
     draw_pine_tree(canvas, 125, 150, 125)
