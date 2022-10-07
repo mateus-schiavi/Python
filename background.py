@@ -6,8 +6,8 @@ from draw2d import \
     draw_rectangle, draw_polygon, draw_text, finish_drawing
 
 def main():
-    scene_width = 800
-    scene_height = 500
+    scene_width = 1280
+    scene_height = 720
 
     canvas = start_drawing("Scene", scene_width, scene_height)
 
@@ -15,22 +15,16 @@ def main():
     draw_sun(canvas, 125, 75)
     draw_cloud(canvas, 600, 350)
     draw_cloud(canvas, 575, 325)
-    draw_cloud(canvas, 550, 325)
-    draw_cloud(canvas, 375, 400)
-    draw_cloud(canvas, 350, 415)
-    draw_cloud(canvas, 325, 375)
+    draw_grass(canvas, 125, 375)
     draw_ground(canvas, scene_width, scene_height)
     for i in range(2000):
         x=random.randint(0, scene_width)
         y=random.randint(0, math.ceil(scene_height / 3))
-        draw_grass(canvas, x, y)
+        draw_grass(canvas, 125, 500)
     draw_pine_tree(canvas, 100, 150, 140)
     draw_pine_tree(canvas, 125, 150, 125)
     draw_pine_tree(canvas, 150, 150, 150)
-    draw_pine_tree(canvas, 130, 150, 130)
-    draw_pine_tree(canvas, 90, 150, 90)
-    draw_pine_tree(canvas, 115, 150, 115)
-
+    draw_arc(canvas, 125, 200, 275, 350)
 
     finish_drawing(canvas)
 
