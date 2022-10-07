@@ -52,7 +52,7 @@ def draw_sun(canvas, x, y):
 
 def draw_ground(canvas, scene_width, scene_height):
     draw_rectangle(canvas, 0, 0,
-        scene_width, scene_height / 3, width=0, fill="green")
+        scene_width, scene_height / 3, width=0, fill="peachPuff")
     
 def draw_grass(canvas, x, y):
     draw_rectangle(canvas,x,y,x+2,y+3, outline="lavender", fill="mediumPurple1")
