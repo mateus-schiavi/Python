@@ -52,10 +52,10 @@ def draw_sun(canvas, x, y):
 
 def draw_ground(canvas, scene_width, scene_height):
     draw_rectangle(canvas, 0, 0,
-        scene_width, scene_height / 3, width=0, fill="peachPuff")
+        scene_width, scene_height / 3, width=0, fill="maroon")
     
 def draw_grass(canvas, x, y):
-    draw_rectangle(canvas,x,y,x+2,y+3, outline="maroon", fill="mediumPurple1")
+    draw_rectangle(canvas,x,y,x+2,y+3, outline="lavender", fill="mediumPurple1")
 
 def draw_pine_tree(canvas, center_x, buttom, height):
     # Draw the trunk of the tree
