@@ -18,6 +18,8 @@ def main():
     # Call the draw_sky and draw_ground functions in this file.
     draw_sky(canvas, scene_width, scene_height)
     draw_ground(canvas, scene_width, scene_height)
+    draw_cloud(canvas, 300, 175)
+    draw_cloud(canvas, 115, 65)
     # Call the finish_drawing function
     # in the draw2d.py library.
     finish_drawing(canvas)
@@ -83,6 +85,8 @@ def draw_pine_tree(canvas, center_x, bottom, height):
             skirt_left, trunk_top,
             outline="gray20", width=1, fill="dark green")
 
+def draw_cloud(canvas, x, y):
+    draw_oval(canvas, x, y, x+100, y+50, outline="white", fill="white")
 
 # Call the main function so that
 # this program will start executing.
