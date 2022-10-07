@@ -23,7 +23,7 @@ def main():
     # in the draw2d.py library.
     finish_drawing(canvas)
 
-def draw_sun(canvas, x, y):
+def draw_moon(canvas, x, y):
     draw_oval(canvas, x, y, x+150, y+150, outline="yellow", fill="white")
 
 def draw_sky(canvas, scene_width, scene_height):
