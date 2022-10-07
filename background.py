@@ -18,8 +18,8 @@ def main():
     # Call the draw_sky and draw_ground functions in this file.
     draw_sky(canvas, scene_width, scene_height)
     draw_ground(canvas, scene_width, scene_height)
-    draw_cloud(canvas, 450, 325)
-    draw_cloud(canvas, 375, 250)
+    draw_cloud(canvas, 525, 325)
+    draw_cloud(canvas, 450, 250)
     # Call the finish_drawing function
     # in the draw2d.py library.
     finish_drawing(canvas)
