@@ -45,7 +45,7 @@ def main():
 # Defining functions  
 def draw_sky(canvas, scene_width, scene_height):
     draw_rectangle(canvas, 0, scene_height / 3,
-        scene_width, scene_height, width=0, fill="deepskyblue")
+        scene_width, scene_height, width=0, fill="gray32")
 
 def draw_sun(canvas, x, y):
     draw_oval(canvas, x, y, x+150, y+150, outline="yellow", fill="yellow")
