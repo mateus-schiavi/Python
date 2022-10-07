@@ -1,86 +1,93 @@
-# Import the functions from the Draw 2-D library
-# so that they can be used in this program.
+# Importing functions
+import random
+import math
 from draw2d import \
     start_drawing, draw_line, draw_oval, draw_arc, \
     draw_rectangle, draw_polygon, draw_text, finish_drawing
 
-# Define your functions such as
-# draw_sky and draw_ground here.
-def draw_horizon(canvas):
-    draw_line(canvas, 0, 300, 800, 300 )
-
-def draw_road(canvas):
-    draw_line(canvas, 0, 0, 400, 300)
-    draw_line(canvas, 800, 0, 400, 300)
-    draw_rectangle(canvas, 400, 0, 400, 50, width=30)
-    draw_rectangle(canvas, 400, 115, 400, 150, width=20)
-    draw_rectangle(canvas, 400, 200, 400, 225, width=10)
-    draw_rectangle(canvas, 400, 260, 400, 275, width=5)
-
-def draw_mountains(canvas):
-    draw_line(canvas, 50, 300, 100, 350)
-    draw_line(canvas, 100, 350, 125, 325)
-    draw_line(canvas, 125, 325, 175, 375)
-    draw_line(canvas, 175, 375, 225, 325)
-    draw_line(canvas, 225, 325, 275, 350)
-    draw_line(canvas, 275, 350, 325, 325)
-    draw_line(canvas, 325, 325, 375, 375)
-    draw_line(canvas, 375, 375, 400, 350)
-    draw_line(canvas, 400, 350, 450, 400)
-    draw_line(canvas, 450, 400, 500, 325)
-    draw_line(canvas, 500, 325, 560, 360)
-    draw_line(canvas, 560, 360, 615, 325)
-    draw_line(canvas, 615, 325, 650, 350)
-    draw_line(canvas, 650, 350, 700, 315)
-    draw_line(canvas, 700, 315, 750, 365)
-    draw_line(canvas, 750, 365, 800, 300)
-
-
-def draw_sun(canvas):
-    draw_arc(canvas, 250, 300, 550, 300, start=-180, extent=-180)
-    
-
-def draw_clouds(canvas):
-    draw_oval(canvas, 100, 450, 300, 450, width=50, fill="ghostWhite")
-    draw_oval(canvas, 550, 400, 750, 450, width=50, fill="ghostWhite")
-
-def draw_grid(canvas, width, height, interval):
-# draw vertical lines
-    label_y = 15
-    for x in range(interval, width, interval):
-        draw_line(canvas, x, 0, x, height)
-        draw_text(canvas, x, label_y, f'{x}')
-
-# draw horizontal lines
-    label_x = 15
-    for y  in range(interval, height, interval):
-        draw_line(canvas, 0, y, width, y)
-        draw_text(canvas, label_x, y, f'{y}')
-
 def main():
-    # Width and height of the scene in pixels
+    # Measurement for window
     scene_width = 800
     scene_height = 500
 
-    # Call the start_drawing function in the draw2d.py library
-    # which will open a window and create a canvas.
+    # Creating a window
     canvas = start_drawing("Scene", scene_width, scene_height)
 
-    # Call your drawing functions such
-    # as draw_sky and draw_ground here.
-    # draw_grid(canvas, scene_width, scene_height, 50)
-    draw_horizon(canvas)
-    draw_road(canvas)
-    draw_sun(canvas)
-    draw_clouds(canvas)
-    draw_mountains(canvas)
-    
-    
+    # Calling functions
+    draw_sky(canvas, scene_width, scene_height)
+    draw_sun(canvas, 125, 75)
+    draw_cloud(canvas, 600, 350)
+    draw_cloud(canvas, 575, 325)
+    draw_cloud(canvas, 550, 325)
+    draw_cloud(canvas, 375, 400)
+    draw_cloud(canvas, 350, 415)
+    draw_cloud(canvas, 325, 375)
+    draw_ground(canvas, scene_width, scene_height)
+    for i in range(2000):
+        x=random.randint(0, scene_width)
+        y=random.randint(0, math.ceil(scene_height / 3))
+        draw_grass(canvas, x, y)
+    draw_pine_tree(canvas, 100, 150, 140)
+    draw_pine_tree(canvas, 125, 150, 125)
+    draw_pine_tree(canvas, 150, 150, 150)
+    draw_pine_tree(canvas, 130, 150, 130)
+    draw_pine_tree(canvas, 90, 150, 90)
+    draw_pine_tree(canvas, 115, 150, 115)
+    # draw_grid(canvas, scene_width, scene_height, 50) (COMMENTING OUT DRAW_GRID)
+
 
     # Call the finish_drawing function
-    # in the draw2d.py library.
     finish_drawing(canvas)
 
-# Call the main function so that
-# this program will start executing.
+
+# Defining functions  
+def draw_sky(canvas, scene_width, scene_height):
+    draw_rectangle(canvas, 0, scene_height / 3,
+        scene_width, scene_height, width=0, fill="deepskyblue")
+
+def draw_sun(canvas, x, y):
+    draw_oval(canvas, x, y, x+150, y+150, outline="yellow", fill="yellow")
+
+def draw_ground(canvas, scene_width, scene_height):
+    draw_rectangle(canvas, 0, 0,
+        scene_width, scene_height / 3, width=0, fill="green")
+    
+def draw_grass(canvas, x, y):
+    draw_rectangle(canvas,x,y,x+2,y+3, outline="green", fill="darkgreen")
+
+def draw_pine_tree(canvas, center_x, buttom, height):
+    # Draw the trunk of the tree
+    trunk_width = height / 5
+    trunk_height = height / 15
+    left_trunk = center_x - trunk_width / 15
+    buttom_trunk = buttom
+    right_trunk = center_x + trunk_width / 15
+    trunk_top = buttom + trunk_height
+    draw_rectangle(canvas, left_trunk, buttom_trunk, right_trunk, trunk_top, fill = 'tan4')
+    
+    # Draw the skirt of the tree
+    skirt_width = height / 2
+    skirt_left = center_x - skirt_width / 5
+    skirt_buttom = trunk_top
+    peak_x = center_x
+    peak_y = buttom + height
+    skirt_right = center_x + skirt_width / 5
+    draw_polygon(canvas, skirt_left, skirt_buttom, peak_x, peak_y, skirt_right, skirt_buttom, fill = 'forestGreen')
+
+def draw_cloud(canvas, x, y):
+    draw_oval(canvas, x, y, x+100, y+50, outline="white", fill="white")
+    
+def draw_grid(canvas, width, height, interval, color= 'blue'):
+    label_y = 15
+    for x in range(interval, width, interval):
+        draw_line(canvas, x, 0, x, height, fill=color)
+        draw_text(canvas, x, label_y, f"{x}", fill=color)
+
+    label_x = 15
+    for y in range(interval, height, interval):
+        draw_line(canvas, 0, y, width, y, fill=color)
+        draw_text(canvas, label_x, y, f"{y}", fill=color)
+
+
+# Calling the main function
 main()
