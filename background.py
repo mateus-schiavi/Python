@@ -12,7 +12,6 @@ def main():
         canvas = start_drawing("Scene", scene_width, scene_height)
         draw_sky(canvas, scene_width, scene_height)
         draw_sun(canvas, 125, 250)
-        draw_bird(canvas, 250, 125)
         draw_ground(canvas, scene_width,scene_height)
         for a in range(2500):
             x = random.randint(0, scene_width)
