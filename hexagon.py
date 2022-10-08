@@ -1,9 +1,9 @@
 import turtle
 
-colors = ["black"]
+colors = ["white"]
 
 p = turtle.Pen()
-turtle.bgcolor("white")
+turtle.bgcolor("black")
 
 for i in range(300):
     p.pencolor(colors[i%1])
