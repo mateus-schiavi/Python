@@ -1,6 +1,6 @@
 import turtle
 
-colors = ["cyan","yellow","blue","green","white","red"]
+colors = ["green","yellow","blue","white"]
 
 p = turtle.Pen()
 turtle.bgcolor("black")
