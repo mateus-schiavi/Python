@@ -5,8 +5,8 @@ colors = ["white"]
 p = turtle.Pen()
 turtle.bgcolor("black")
 
-for i in range(50):
+for i in range(400):
     p.pencolor(colors[i%1])
     p.width(i/100+2)
     p.forward(i)
-    p.left(30)
+    p.left(80)
