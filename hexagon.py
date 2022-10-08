@@ -1,12 +1,12 @@
 import turtle
 
-colors = ["white"]
+colors = ["white","beige","yellow","orange","red","pink","purple","blue","green","brown","grey"]
 
 p = turtle.Pen()
 turtle.bgcolor("black")
 
 for i in range(256):
-    p.pencolor(colors[i%1])
+    p.pencolor(colors[i%11])
     p.width(i/100+2)
     p.forward(i)
     p.left(64)
