@@ -9,4 +9,4 @@ for i in range(50):
     p.pencolor(colors[i%1])
     p.width(i/100+2)
     p.forward(i)
-    p.left(59)
+    p.left(30)
