@@ -5,9 +5,9 @@ Verify that the extract_city, extract_state,
 and extract_zipcode functions work correctly.
 """
 
-from address import extract_city, extract_state, extract_zipcode
+from address import make_full_name, \
+    extract_family_name, extract_given_name
 import pytest
-
 def test_extract_city():
     """Verify that the extract_city function returns correct results.
     Parameters: none
