@@ -1,4 +1,5 @@
 import turtle
+
 wn = turtle.Screen()
 wn.setup(400,600)
 wn.bgcolor("white")
