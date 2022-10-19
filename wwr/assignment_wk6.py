@@ -15,7 +15,7 @@ def take_noun():
     fourth_noun = ['you', 'they']
     
     noun = [first_noun,second_noun,third_noun,fourth_noun]
-    noun_chosen = random.c(noun)
+    noun_chosen = random.choice(noun)
     noun_real_chosen = random.choice(noun_chosen)
     
     
