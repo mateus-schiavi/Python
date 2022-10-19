@@ -5,22 +5,22 @@ import re
 tenses = [0,1,2] # present, past, future
 tense = random.choice(tenses)
 
-#determine noun
+#determining  noun
 def get_noun():
     global noun_var
     global determiner_var
     determiner_var = 0
 
     nouns1 = ['I']
-    nouns2 = ['vacation','job','Book or Mormon', 'butterfly','dog','homework','home']
-    nouns3a = ['people','years','days','things']
-    nouns3b = ['you','we']
-    #allow program to chose form any subject line
-    nouns = [nouns1,nouns2,nouns3a,nouns3b]
+    nouns2 = ['Cartoon','Crowd','Book or Mormon', 'School','animal','school','BYU']
+    nouns3 = ['people','century','week','business']
+    nouns4 = ['you','they']
+    #allows the program to choose any form from any subject line
+    nouns = [nouns1,nouns2,nouns3,nouns4]
     nouns_choice = random.choice(nouns)
     nouns_choice_real = random.choice(nouns_choice)
 
-    #determine what tense the program is
+    #determining which kind of tense the program will acquire
     if nouns_choice == nouns1:
         noun_var = 0
         determiner_var = 0
