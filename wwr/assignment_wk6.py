@@ -3,7 +3,7 @@ import re
 
 #make the program select random tense
 tense = [0,1,2] # present, past, future
-tense = random.choice(tenses)
+tense = random.choice(tense)
 
 #determining  noun
 def get_noun():
@@ -40,7 +40,7 @@ def get_noun():
 
 #get determiners
 
-def get_determiner(determiner_var):
+def get_determiner(determine_variable):
 
     determine_none = ''
     determine_singular = ['the','a']
@@ -60,12 +60,12 @@ def get_determiner(determiner_var):
 # def get_noun():
 #     nouns = [""]
 
-def get_verb(noun_var):
+def get_verb(noun_variable):
     
-    global tenses
-    tenses = [0,1,2] # present, past, future
+    global tense
+    tense = [0,1,2] # present, past, future
     #randomize verb tense
-    tense = random.choice(tenses)
+    tense = random.choice(tense)
     
     to_be = [['am','was','will be'],['is','was','will be'],['are','were','will be']]
     to_have = [['have','had','will have'],['has','had','will have'],['have','had','will have']]
