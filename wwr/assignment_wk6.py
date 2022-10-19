@@ -2,17 +2,17 @@ import random
 import re
 
 #make the program select random tense
-tenses = [0,1,2] # present, past, future
+tense = [0,1,2] # present, past, future
 tense = random.choice(tenses)
 
 #determining  noun
 def get_noun():
-    global noun_var
-    global determiner_var
-    determiner_var = 0
+    global noun_variable
+    global determine_variable
+    determine_variable = 0
 
     nouns1 = ['I']
-    nouns2 = ['Cartoon','Crowd','Book or Mormon', 'School','animal','school','BYU']
+    nouns2 = ['Cartoon','Crowd','Scriptures', 'School','animal','school','BYU']
     nouns3 = ['people','century','week','business']
     nouns4 = ['you','they']
     #allows the program to choose any form from any subject line
@@ -22,17 +22,17 @@ def get_noun():
 
     #determining which kind of tense the program will acquire
     if nouns_choice == nouns1:
-        noun_var = 0
-        determiner_var = 0
+        noun_variable = 0
+        determine_variable = 0
     elif nouns_choice == nouns2:
-        noun_var = 1
-        determiner_var = 1
+        noun_variable = 1
+        determine_variable = 1
     elif nouns_choice == nouns3:
-        noun_var = 2
-        determiner_var = 2
+        noun_variable = 2
+        determine_variable = 2
     elif nouns_choice == nouns4:
-        noun_var = 2
-        determiner_var = 0
+        noun_variable = 2
+        determine_variable = 0
     else:
         print('error')
     
@@ -42,17 +42,17 @@ def get_noun():
 
 def get_determiner(determiner_var):
 
-    determiner_none = ''
-    determiner_sg = ['the','a']
-    determiner_pl = ['many','some']
+    determine_none = ''
+    determine_singular = ['the','a']
+    determine_plural = ['many','some']
    
-    if determiner_var == 0:
+    if determine_variable == 0:
         determiner_real = determiner_none
         return determiner_real
-    elif determiner_var == 1:
+    elif determine_variable == 1:
         determiner_real = random.choice(determiner_sg)
         return determiner_real
-    elif determiner_var == 2:
+    elif determine_variable == 2:
         determiner_real = random.choice(determiner_pl)
         return determiner_real
   
