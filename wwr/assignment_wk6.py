@@ -1,123 +1,142 @@
 import random
 import re
 
-tense = [0,1,2]
-tense = random.choice(tense)
+#make the program select random tense
+tenses = [0,1,2] # present, past, future
+tense = random.choice(tenses)
 
-def take_noun():
-    global noun_variable
-    global determinated_variable
-    determinated_variable = 0
-    
-    first_noun = ['I']
-    second_noun = ['Holiday','business','scriptures','insects','animal','maintask','house']
-    third_noun = ['crowd','decade','week','objects']
-    fourth_noun = ['you', 'they']
-    
-    noun = [first_noun,second_noun,third_noun,fourth_noun]
-    noun_chosen = random.choice(noun)
-    noun_real_chosen = random.choice(noun_chosen)
-    
-    
-    if noun_chosen == first_noun:
-        noun_variable = 0
-        determinated_variable = 0
-    elif noun_chosen == second_noun:
-        noun_variable = 1
-        determinated_variable = 1
-    elif noun_chosen == third_noun:
-        noun_variable = 2
-        determinated_variable = 2
-    elif noun_chosen == fourth_noun:
-        noun_variable = 2
-        determinated_variable = 0
+#determine noun
+def get_noun():
+    global noun_var
+    global determiner_var
+    determiner_var = 0
+
+    nouns1 = ['I']
+    nouns2 = ['vacation','job','Book or Mormon', 'butterfly','dog','homework','home']
+    nouns3a = ['people','years','days','things']
+    nouns3b = ['you','we']
+    #allow program to chose form any subject line
+    nouns = [nouns1,nouns2,nouns3a,nouns3b]
+    nouns_choice = random.choice(nouns)
+    nouns_choice_real = random.choice(nouns_choice)
+
+    #determine what tense the program is
+    if nouns_choice == nouns1:
+        noun_var = 0
+        determiner_var = 0
+    elif nouns_choice == nouns2:
+        noun_var = 1
+        determiner_var = 1
+    elif nouns_choice == nouns3a:
+        noun_var = 2
+        determiner_var = 2
+    elif nouns_choice == nouns3b:
+        noun_var = 2
+        determiner_var = 0
     else:
-        print('It is not possible to run the program')
-        
-def getting_determinated(determinated_variable):
-
-    determinated_none = ''
-    determinated_singular = ['the','a']
-    determinated_plural = ['some','many']
-
-    if determinated_variable == 0:
-        determinated_real = determinated_none
-        return determinated_real  
-    elif determinated_variable == 1:
-        determinated_real = random.choice(determinated_singular)
-        return determinated_real
-    elif determinated_variable == 2:
-        determinated_real = random.choice(determinated_plural)
-        return determinated_real
+        print('error')
     
-def take_verb(noun_variable):
+    return(nouns_choice_real)
+
+#get determiners
+
+def get_determiner(determiner_var):
+
+    determiner_none = ''
+    determiner_sg = ['the','a']
+    determiner_pl = ['many','some']
+   
+    if determiner_var == 0:
+        determiner_real = determiner_none
+        return determiner_real
+    elif determiner_var == 1:
+        determiner_real = random.choice(determiner_sg)
+        return determiner_real
+    elif determiner_var == 2:
+        determiner_real = random.choice(determiner_pl)
+        return determiner_real
+  
+#set up the nouns
+# def get_noun():
+#     nouns = [""]
+
+def get_verb(noun_var):
     
-    global tense
-    tense = [0,1,2]
-    tense = random.choice(tense)
+    global tenses
+    tenses = [0,1,2] # present, past, future
+    #randomize verb tense
+    tense = random.choice(tenses)
     
     to_be = [['am','was','will be'],['is','was','will be'],['are','were','will be']]
     to_have = [['have','had','will have'],['has','had','will have'],['have','had','will have']]
     to_see = [['see','saw','will see'],['sees','saw','will see'],['see','saw','will see']]
     to_know = [['know','knew','will know'],['knows','knew','will know'],['know','knew','will know']]
     to_want = [['want','wanted','will want'],['wants','wanted','will want'],['want','wanted','will want']]
-    
-    main_verbs = [to_be,to_have,to_see,to_know,to_want]
-    
-    verb = random.choice(main_verbs)
-    verb_chosen = verb[noun_variable]
-    verb_real_chosen = verb_chosen[tense]
-    return verb_real_chosen
 
-def take_preposition():
-    preposition_list = ["about","above","across","after","along","around","at","before","behind",
+    #allow program to know what to randomize
+    verbs = [to_be,to_have,to_see,to_know,to_want]
+
+    verb = random.choice(verbs)
+    verb_choice = verb[noun_var]  #choose subject
+    verb_choice_real = verb_choice[tense] #choose tense
+    return verb_choice_real
+
+def get_preposition():
+    prepositions = ["about","above","across","after","along","around","at","before","behind",
     "below","beyond","by","despite","except","for","from","in","into","near","of",
     "off","on","onto","out","over","past","to","under","with","without",]
     
-    preposition = random.choice(preposition_list)
+    #radnomize the proposition
+    preposition = random.choice(prepositions)
     return preposition
 
-def take_prepositioinal_phrase():
-    first_phrase = ['around the corner', 'ontop of the hill', 'at the lake', ]
-    second_phrase = ['at the beach', 'up the hill', 'during the game', 'during the storm',]
-    third_phrase = ['over the mountain', 'on the edge of the cliff', 'on the hiking trail',]
+#Get prepositional phrases
+def get_prepositioinal_phrase():
+    phrase1 = ['around the corner', 'ontop of the hill', 'at the lake', ]
+    phrase2 = ['at the beach', 'up the hill', 'during the game', 'during the storm',]
+    phrase3 = ['over the mountain', 'on the edge of the cliff', 'on the hiking trail',]
 
-    phrases = [first_phrase,second_phrase,third_phrase]
-    phrase_chosen = random.choice(phrases)
-    phrase_real_chosen = random.choice(phrase_chosen)
+    phrases = [phrase1,phrase2,phrase3]
+    phrase_choice = random.choice(phrases)
+    phrase_choice_real = random.choice(phrase_choice)
 
 
-def take_indirect_object():
-    object_used = ['the raisins','the landscapes','the sea','him','the policy','the librarian','traveling','cats']
-    object_real = random.choice(object_used)
+#set indirect objects
+def get_indirect_object():
+    objects = ['the raisins','the landscapes','the sea','him','the policy','the librarian','traveling','cats']
+    object_real = random.choice(objects)
     return object_real
 
-def take_direct_object():
-    object_main = ['it','them','him','her','you']
-    object_real = random.choice(object_main)
+#set indirect objects
+def get_direct_object():
+    objects = ['it','them','him','her','you']
+    object_real = random.choice(objects)
     return object_real
 
 def main():
-    noun_p = take_noun()
-    determine_p = getting_determinated(determinated_variable)
-    verb_p = take_verb(noun_variable)
-    preposition_p = take_preposition()
-    indirect_object_p = take_indirect_object()
-    direct_object_p = take_direct_object()
-    prep_phrase_p = take_prepositioinal_phrase()
+    noun_p = get_noun()
+    determiner_p = get_determiner(determiner_var)
+    verb_p = get_verb(noun_var)
+    preposition_p = get_preposition()
+    indirect_object_p = get_indirect_object()
+    direct_object_p = get_direct_object()
+    prep_phrase_p = get_prepositioinal_phrase()
 
     sentence_structures = ['sub_verb_dp', 'det_sub_verb_prep_dp', 'det_sub_verb_dp_prep_io', 'det_sub_verb_dp_prep_io_pp',]
     sentence_structure = random.choice(sentence_structures)
 
     if sentence_structure == 'sub_verb_dp':
-        phrase_p = (f'{determine_p} {noun_p} {verb_p} {direct_object_p}')
+        phrase_p = (f'{determiner_p} {noun_p} {verb_p} {direct_object_p}')
     if sentence_structure == 'det_sub_verb_prep_dp':
-        phrase_p = (f'{determine_p} {noun_p} {verb_p} {preposition_p} {direct_object_p}')
+        phrase_p = (f'{determiner_p} {noun_p} {verb_p} {preposition_p} {direct_object_p}')
     if sentence_structure == 'det_sub_verb_dp_prep_io':
-        phrase_p = (f'{determine_p} {noun_p} {verb_p} {direct_object_p} {preposition_p} {indirect_object_p}')
+        phrase_p = (f'{determiner_p} {noun_p} {verb_p} {direct_object_p} {preposition_p} {indirect_object_p}')
     if sentence_structure == 'det_sub_verb_dp_prep_io_pp':
-        phrase_p = (f'{determine_p} {noun_p} {verb_p} {direct_object_p} {preposition_p} {indirect_object_p} {prep_phrase_p}')
+        phrase_p = (f'{determiner_p} {noun_p} {verb_p} {direct_object_p} {preposition_p} {indirect_object_p} {prep_phrase_p}')
 
+#    phrase_p = phrase_p.lstrip()
+#    phrase_p = re.sub("\s\s+", " ", phrase_p)
+#    phrase_p = phrase_p.capitalize()
     print(phrase_p)
 
 main()
