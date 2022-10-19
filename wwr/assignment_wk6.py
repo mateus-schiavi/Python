@@ -27,10 +27,10 @@ def get_noun():
     elif nouns_choice == nouns2:
         noun_var = 1
         determiner_var = 1
-    elif nouns_choice == nouns3a:
+    elif nouns_choice == nouns3:
         noun_var = 2
         determiner_var = 2
-    elif nouns_choice == nouns3b:
+    elif nouns_choice == nouns4:
         noun_var = 2
         determiner_var = 0
     else:
