@@ -110,13 +110,13 @@ def main():
     sentence_structure = random.choice(sentence_structures)
 
     if sentence_structure == 'sub_verb_dp':
-        phrase_p = (f'{determiner_p} {noun_p} {verb_p} {direct_object_p}')
+        phrase_p = (f'{determine_p} {noun_p} {verb_p} {direct_object_p}')
     if sentence_structure == 'det_sub_verb_prep_dp':
-        phrase_p = (f'{determiner_p} {noun_p} {verb_p} {preposition_p} {direct_object_p}')
+        phrase_p = (f'{determine_p} {noun_p} {verb_p} {preposition_p} {direct_object_p}')
     if sentence_structure == 'det_sub_verb_dp_prep_io':
-        phrase_p = (f'{determiner_p} {noun_p} {verb_p} {direct_object_p} {preposition_p} {indirect_object_p}')
+        phrase_p = (f'{determine_p} {noun_p} {verb_p} {direct_object_p} {preposition_p} {indirect_object_p}')
     if sentence_structure == 'det_sub_verb_dp_prep_io_pp':
-        phrase_p = (f'{determiner_p} {noun_p} {verb_p} {direct_object_p} {preposition_p} {indirect_object_p} {prep_phrase_p}')
+        phrase_p = (f'{determine_p} {noun_p} {verb_p} {direct_object_p} {preposition_p} {indirect_object_p} {prep_phrase_p}')
 
     print(phrase_p)
 
