@@ -1,6 +1,8 @@
-from sentences import get_determiner, get_noun, get_verb
 import random
+
 import pytest
+
+from sentences import get_determiner, get_noun, get_verb
 
 
 def test_get_determiner():
