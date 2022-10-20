@@ -1,5 +1,6 @@
 import random
 
+
 def main():
     generate_sentence(1, "past")
     generate_sentence(1, "present")
