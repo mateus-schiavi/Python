@@ -6,7 +6,7 @@ def test_get_determiner():
 
     single_determiners = ["a", "one", "the"]
 
-    for _ in range(4):
+    for _ in range(8):
 
         word = get_determiner(1).lower()
 
@@ -15,7 +15,7 @@ def test_get_determiner():
 
     plural_determiners = ["some", "many", "the"]
 
-    for _ in range(4):
+    for _ in range(8):
 
         word = get_determiner(2).lower()
 
@@ -29,7 +29,7 @@ def test_get_noun():
                  'girl', 'man', 'rabbit', 
                  'woman']
 
-    for _ in range(4):
+    for _ in range(8):
 
         word = get_noun(1)
 
@@ -41,7 +41,7 @@ def test_get_noun():
                  'girls', 'men', 'rabbits', 
                  'women']
 
-    for _ in range(4):
+    for _ in range(8):
 
         word = get_noun(2)
 
@@ -55,7 +55,7 @@ def test_get_verb():
                  'opened', 'talked', 'walked', 
                  'wrote']
     
-    for _ in range(x):
+    for _ in range(8):
         word = get_verb(1, 'past')
         
         assert word in past_verbs
@@ -67,7 +67,7 @@ def test_get_verb():
                      'opens', 'talks', 'walks', 
                      'writes']
     
-    for _ in range(4):
+    for _ in range(8):
         word = get_verb(1, 'present')
         
         assert word in singular_present_verbs
@@ -79,7 +79,7 @@ def test_get_verb():
                      'open', 'talk', 'walk', 
                      'write']
     
-    for _ in range(4):
+    for _ in range(8):
         word = get_verb(2, 'present')
         
         assert word in plural_present_verbs
@@ -91,7 +91,7 @@ def test_get_verb():
                  'will open', 'will talk', 'will walk', 
                  'will write']
     
-    for _ in range(4):
+    for _ in range(8):
         word = get_verb(2, 'future')
         
         assert word in future_verbs
@@ -110,7 +110,7 @@ def test_get_preposition():
                     'over', 'past', 'to', 
                     'under', 'with', 'without']
     
-    for _ in range(4):
+    for _ in range(8):
         
         word = get_preposition()
         
@@ -119,13 +119,13 @@ def test_get_preposition():
     
 def test_get_prepositional_phrase():
     
-    for _ in range(4):
+    for _ in range(8):
         
         phrase =  get_prepositional_phrase(1).split(' ')
 
         assert len(phrase) == 4
         
-    for _ in range(4):
+    for _ in range(8):
         
         phrase =  get_prepositional_phrase(2).split(' ')
         
