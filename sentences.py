@@ -19,7 +19,7 @@ def main():
 
 
 def get_determiner(x):
-    if quantity == 1:
+    if x == 1:
         words = ['a', 'one', 'the']
     else:
         words = ['some', 'many', 'the']
@@ -31,7 +31,7 @@ def get_determiner(x):
 
 def get_noun(x):
 
-    if quantity == 1:
+    if x == 1:
         nouns = ['butterfly', 'motorcycle', 'board', 
                  'cat', 'child', 'snake', 
                  'girl', 'man', 'rabbit', 
@@ -54,7 +54,7 @@ def get_verb(x, tense):
                  'opened', 'talked', 'walked', 
                  'wrote']
     elif tense == 'present':
-        if quantity == 1:
+        if x == 1:
             verbs = ['sleeps', 'swims', 'grows', 
                      'laughs', 'runs', 'plays', 
                      'opens', 'talks', 'walks', 
