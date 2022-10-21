@@ -97,7 +97,7 @@ def get_prepositional_phrase(x):
     noun = get_noun(x)
     adj = get_adjective()
 
-    prepositional_phrase = f'{preposition} {determiner} {adjective} {noun}'
+    prepositional_phrase = f'{preposition} {determiner} {adj} {noun}'
     return prepositional_phrase
 
 
