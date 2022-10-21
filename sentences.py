@@ -8,8 +8,8 @@ def main():
             adjective = get_adjective()
             adverb = get_adverb()
             determiner = get_determiner(x)
-            noun = get_noun(quantity)
-            verb = get_verb(quantity, tense)
+            noun = get_noun(x)
+            verb = get_verb(x, tense)
             preposition_1 = get_prepositional_phrase(x)
             preposition_2 = get_prepositional_phrase(x)
             
@@ -97,7 +97,7 @@ def get_prepositional_phrase(x):
     noun = get_noun(x)
     adj = get_adjective()
 
-    prepositional_phrase = f'{preposition} {determiner} {adj} {noun}'
+    prepositional_phrase = f'{preposition} {determiner} {adjective} {noun}'
     return prepositional_phrase
 
 
