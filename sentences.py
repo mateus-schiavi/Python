@@ -2,83 +2,153 @@ import random
 
 
 def main():
-    generate_sentence(1, "past")
-    generate_sentence(1, "present")
-    generate_sentence(1, "future")
-    generate_sentence(0, "past")
-    generate_sentence(0, "present")
-    generate_sentence(0, "future")
+    tense = ['past','present','future']
+    quant = [1,2]
+    for amount in quant:
+        for tenses in tense:
+            adjective = get_adj()
+            adverb = get_adv()
+            determiner = get_det(quant)
+            noun = get_n(quant)
+            verb = get_v(quant, tenses)
+            preposition_1 = get_prepo_phrase(quant)
+            preposition_2 = get_prepo_phrase(quant)
+            
+            main_sentence = f'{preposition_1.capitalize()},{determiner},{adjective},{verb},{adverb},{preposition_2}. \n'
+
+def get_determiner(quant):
     
-def get_determiner(quantity):
-    
-    if quantity == 1:
-        words = ["a", "one", "the"]
+    if quant == 1:
+        word = ['a','one','the']
     else:
-        words = ["two", "some", "many", "the"]
-
-    word = random.choice(words)
-    return word
-
-def get_noun(quantity):
-
-    if quantity == 1:
-        words = ["bird", "boy", "car", "cat", "child",
-        "dog", "girl", "man", "rabbit", "woman"]
-    else:
-        words = ["birds", "boys", "cars", "cats", "children",
-        "dogs", "girls", "men", "rabbits", "women"]
+        word = ['some','many','the']
         
-    noun = random.choice(words)
-    return noun
-
-def get_verb(quantity, tense):
-
-    if tense == "past":
-        words = ["drank", "ate", "grew", "laughed", "thought",
-        "ran", "slept", "talked", "walked", "wrote"]
     
-    elif tense == "present" and quantity == 1:
-        words =  ["drinks", "eats", "grows", "laughs", "thinks",
-        "runs", "sleeps", "talks", "walks", "writes"]
+    determiner = random.choice(word)
+    return determiner
+
+def get_n(quant):
+     
+    if quant == 1:
+        noun = ['bird','child','motorcycle','lion','lizard','tiger','snake','butterfly']
     
-    elif tense == "present" and quantity != 1:
-        words = ["drink", "eat", "grow", "laugh", "think",
-        "run", "sleep", "talk", "walk", "write"]
-        
     else:
-        words = ['will drink', 'will eat', 'will grow', 'will laugh',
-        'will think', 'will run', 'will sleep', 'will talk',
-        'will walk', 'will write']
+        noun = ['birds','children','motorcycles','lions','lizards','tigers','snakes','butterflies']
+
+def get_v(quant, tense):
     
-    verb = random.choice(words)
+    if tense == 'past':
+        verbs = ['played','told','opened','sewed','breathed','printed','threw','jumped']
+        
+    elif tense == 'present':
+        if quant == 1:
+            verbs = ['plays','tells','opens','sews','breathes','prints','throws','jumps']
+            
+        else:
+            verbs = ['play','tell','open','sew','breath','print','throw','jump']
+
+    elif tense == 'future':
+        verbs = ['will play','will tell','will open','will breath','will print','will throw','will jump','will sew']
+
+    verb = random.ch(verbs)
     return verb
 
-def get_preposition():
+    def get_prepo():
 
-    words = ["about", "above", "across", "after", "along",
-        "around", "at", "before", "behind", "below",
-        "beyond", "by", "despite", "except", "for",
-        "from", "in", "into", "near", "of",
-        "off", "on", "onto", "out", "over",
-        "past", "to", "under", "with", "without"]
-    
-    preposition = random.choice(words)
+        prepositions = ['about', 'above', 'across', 
+                    'after', 'along', 'around', 
+                    'at', 'before', 'behind', 
+                    'below', 'beyond', 'by', 
+                    'despite', 'except', 'for', 
+                    'from', 'in', 'into', 
+                    'near', 'of', 'off', 
+                    'on', 'onto', 'out', 
+                    'over', 'past', 'to', 
+                    'under', 'with', 'without']
+    preposition = random.choice(prepositions)
     return preposition
 
-def get_prepositional_phrase(quantity):
 
-    preposition = get_preposition()
-    determiner = get_determiner(quantity)
-    noun = get_noun(quantity)
-    prepositional_phrase = preposition + ' ' + determiner + ' ' + noun
-    return prepositional_phrase
+def get_prepo_phrase(quant):
 
-def generate_sentence(quantity, tense):
-    determiner = get_determiner(quantity)
-    noun = get_noun(quantity)
-    verb = get_verb(quantity, tense)
-    prepositional_phrase = get_prepositional_phrase(quantity)
+    preposition = get_prepo_phrase()
+    determiner = get_det(quant)
+    noun = get_n(quant)
+    adjective = get_adj()
+
+    preposition_phrase = f'{preposition} {determiner} {adj} {noun}'
+    return preposition_phrase
+
+
+def get_adj():
+    adjectives = ['adorable', 'adventurous', 'aggressive', 
+                   'agreeable', 'alert', 'alive', 
+                   'amused', 'angry', 'annoyed', 
+                   'annoying', 'anxious', 'arrogant', 
+                   'ashamed', 'attractive', 'average', 
+                   'awful', 'bad', 'beautiful', 
+                   'better', 'bewildered', 'black', 
+                   'bloody', 'blue', 'blue-eyed', 
+                   'blushing', 'bored', 'brainy', 
+                   'brave', 'breakable', 'bright', 
+                   'busy', 'calm', 'careful', 
+                   'cautious', 'charming', 'cheerful', 
+                   'clean', 'clear', 'clever', 
+                   'cloudy', 'clumsy', 'colorful', 
+                   'combative', 'comfortable', 'concerned', 
+                   'condemned', 'confused', 'cooperative', 
+                   'courageous', 'crazy', 'creepy', 
+                   'crowded', 'cruel', 'curious', 
+                   'cute', 'dangerous', 'dark', 
+                   'dead', 'defeated', 'defiant', 
+                   'delightful', 'depressed', 'determined', 
+                   'different', 'difficult', 'disgusted', 
+                   'distinct', 'disturbed', 'dizzy', 
+                   'doubtful', 'drab', 'dull']
     
-    print(f'{determiner.capitalize()} {noun} {verb} {prepositional_phrase}.')
+    adjective = random.choice(adjectives)
+    return adjective
+    
+    
+def get_adv():
+    adverbs = ['accidentally', 'always', 'angrily', 
+               'anxiously', 'arrogantly', 'awkwardly', 
+               'badly', 'blindly', 'boastfully', 
+               'boldly', 'bravely', 'brightly', 
+               'cheerfully', 'coyly', 'crazily', 
+               'cruelly', 'defiantly', 'deftly', 
+               'deliberately', 'devotedly', 'doubtfully', 
+               'dramatically', 'dreamily', 'dutifully', 
+               'eagerly', 'elegantly', 'enormously', 
+               'evenly', 'eventually', 'exactly', 
+               'faithfully', 'finally', 'fondly', 
+               'foolishly', 'fortunately', 'frantically', 
+               'frequently', 'gleefully', 'gracefully', 
+               'happily', 'hastily', 'honestly', 
+               'hopelessly', 'hourly', 'hungrily', 
+               'innocently', 'inquisitively', 'irritably', 
+               'jealously', 'joyously', 'justly', 
+               'kindly', 'lazily', 'loosely', 
+               'madly', 'merrily', 'mortally', 
+               'mysteriously', 'nervously', 'never', 
+               'noisily', 'obediently', 'obnoxiously', 
+               'occasionally', 'often', 'only', 
+               'perfectly', 'politely', 'poorly', 
+               'powerfully', 'promptly', 'quickly', 
+               'rapidly', 'rarely', 'regularly', 
+               'reluctantly', 'rudely', 'safely', 
+               'seldom', 'selfishly', 'seriously', 
+               'shakily', 'sharply', 'silently', 
+               'slowly', 'solemnly', 'sometimes', 
+               'speedily', 'sternly', 'technically', 
+               'tediously', 'unexpectedly', 'usually', 
+               'victoriously', 'vivaciously', 'warmly', 
+               'wearily', 'weekly', 'wildly', 
+               'yearly']
+    
+    adverb = random.choice(adverbs)
+    return adverb
 
-main()
+
+if __name__ == '__main__':
+    main()

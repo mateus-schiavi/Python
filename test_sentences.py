@@ -3,7 +3,7 @@ import random
 import pytest
 
 from sentences import (get_determiner, get_noun, get_preposition,
-                       get_prepositional_phrase, get_verb)
+                       get_prepositional_phrase, get_verb, get_adj,get_adv)
 
 
 def test_get_determiner():
