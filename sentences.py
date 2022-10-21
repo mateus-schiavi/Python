@@ -29,7 +29,7 @@ def get_determiner(x):
     return determiner
 
 
-def get_noun(quantity):
+def get_noun(x):
 
     if quantity == 1:
         nouns = ['butterfly', 'motorcycle', 'board', 
@@ -46,7 +46,7 @@ def get_noun(quantity):
     return noun
 
 
-def get_verb(quantity, tense):
+def get_verb(x, tense):
 
     if tense == 'past':
         verbs = ['slept', 'swam', 'grew', 
@@ -90,11 +90,11 @@ def get_preposition():
     return preposition
 
 
-def get_prepositional_phrase(quantity):
+def get_prepositional_phrase(x):
 
     preposition = get_preposition()
-    determiner = get_determiner(quantity)
-    noun = get_noun(quantity)
+    determiner = get_determiner(x)
+    noun = get_noun(x)
     adj = get_adjective()
 
     prepositional_phrase = f'{preposition} {determiner} {adj} {noun}'
