@@ -16,7 +16,7 @@ def main():
             
             main_sentence = f'{preposition_1.capitalize()},{determiner},{adjective},{verb},{adverb},{preposition_2}. \n'
 
-def get_determiner(quant):
+def get_det(quant):
     
     if quant == 1:
         word = ['a','one','the']
