@@ -55,7 +55,7 @@ def test_get_verb():
                  'opened', 'talked', 'walked', 
                  'wrote']
     
-    for _ in range(4):
+    for _ in range(x):
         word = get_verb(1, 'past')
         
         assert word in past_verbs
