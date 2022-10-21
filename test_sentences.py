@@ -2,8 +2,7 @@ import random
 
 import pytest
 
-from sentences import (get_det, get_n, get_prepo,
-                       get_prepo_phrase, get_verb, get_adj,get_adv)
+from sentences import (get_det,get_v,get_adj,get_adv,get_prepo_phrase,get_n)
 
 
 def test_get_determiner():
