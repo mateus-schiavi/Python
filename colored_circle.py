@@ -2,7 +2,7 @@ import turtle
 
 ninja = turtle.Turtle()
 
-ninja.speed(100)
+ninja.speed(576)
 
 
 for i in range(180):
