@@ -106,9 +106,9 @@ def make_periodic_table():
 
 def main():
     # Get a chemical formula for a molecule from the user.
-    element_formula = input('Enter the MF(molecular formula) of the chosen sample: ')
+    formula = input('Enter the molecular formula of the sample: ')
     # Get the mass of a chemical sample in grams from the user.
-    element_mass = float(input('Enter the MIG (mass in grams) of the chosen sample: '))
+    mass = float(input('Enter the mass in grams of the sample: '))
     # Call the make_periodic_table function and
     # store the periodic table in a variable.
 
@@ -118,7 +118,7 @@ def main():
     # chemical formula given by the user to a compound
     # list that stores element symbols and the quantity
     # of atoms of each element in the molecule.
-    element_formula_list = parse_formula(formula, table)
+    formula_list = parse_formula(formula, table)
     # Call the compute_molar_mass function to compute the
     # molar mass of the molecule from the compound list.
     molar_mass = compute_molar_mass(formula_list, table)
