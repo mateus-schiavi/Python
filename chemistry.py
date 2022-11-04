@@ -100,7 +100,7 @@ def make_periodic_table():
         "Zr":["Zirconium",91.224]
     }
     
-    def main():
+def main():
     # Get a chemical formula for a molecule from the user.
         chemistry_formula = input('Type the mol formula of the chosen sample: ')
     # Get the mass of a chemical sample in grams from the user.
@@ -114,16 +114,16 @@ def make_periodic_table():
     # chemical formula given by the user to a compound
     # list that stores element symbols and the quantity
     # of atoms of each element in the molecule.
-    formula_table = parse_formula(chemistry_formula, list)
+formula_table = parse_formula(chemistry_formula, list)
     # Call the compute_molar_mass function to compute the
     # molar mass of the molecule from the compound list.
-    molar_mass = compute_molar_mass(formula_table, list)
+molar_mass = compute_molar_mass(formula_table, list)
     # Compute the number of moles in the sample.
-    num_molar_mass = element_mass / molar_mass
+num_molar_mass = element_mass / molar_mass
     # Print the molar mass.
-    print(f'{molar_mass:5f} grams/mole')
+print(f'{molar_mass:5f} grams/mole')
     # Print the number of moles.
-    print(f'{molar_mass:5f} moles')
+print(f'{molar_mass:5f} moles')
     
 class FormulaError(ValueError):
     """FormulaError is the type of error that the parse_formula
