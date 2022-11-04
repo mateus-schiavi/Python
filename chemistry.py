@@ -99,48 +99,50 @@ def make_periodic_table():
         "Zn":["Zinc",65.38],
         "Zr":["Zirconium",91.224]
     }
-    
-    def main():
+
+    # for element in periodic_table_list:
+    #     print(element)
+    return periodic_table_list
+
+def main():
     # Get a chemical formula for a molecule from the user.
-        chemistry_formula = input('Type the mol formula of the chosen sample: ')
+    formula = input('Enter the molecular formula of the sample: ')
     # Get the mass of a chemical sample in grams from the user.
-        element_mass = float(input('Type the mass (in grams) of the chosen sample: '))
+    mass = float(input('Enter the mass in grams of the sample: '))
     # Call the make_periodic_table function and
     # store the periodic table in a variable.
 
-        list = make_periodic_table()
+    table = make_periodic_table()
 
     # Call the parse_formula function to convert the
     # chemical formula given by the user to a compound
     # list that stores element symbols and the quantity
     # of atoms of each element in the molecule.
-    formula_table = parse_formula(chemistry_formula, list)
+    formula_list = parse_formula(formula, table)
     # Call the compute_molar_mass function to compute the
     # molar mass of the molecule from the compound list.
-    molar_mass = compute_molar_mass(formula_table, list)
+    molar_mass = compute_molar_mass(formula_list, table)
     # Compute the number of moles in the sample.
-    num_molar_mass = element_mass / molar_mass
+    number_of_moles = mass / molar_mass
     # Print the molar mass.
     print(f'{molar_mass:5f} grams/mole')
     # Print the number of moles.
-    print(f'{molar_mass:5f} moles')
+    print(f'{number_of_moles:.5f} moles')
     
 class FormulaError(ValueError):
-    """FormulaError is the type of error that the parse_formula
-    function will raise if a formula is invalid.
+    """FormulaError is the type of error that
+    parse_formula will raise if a formula is invalid.
     """
 
 
 def parse_formula(formula, periodic_table_dict):
-    """Convert a chemical formula for a molecule into a compound
-    list that stores the quantity of atoms of each element
-    in the molecule. For example, this function will convert
-    "H2O" to [["H", 2], ["O", 1]] and
-    "PO4H2(CH2)12CH3" to [["P", 1], ["O", 4], ["H", 29], ["C", 13]]
-
+    """Convert a chemical formula for a molecule into a compound list
+    that stores the quantity of atoms of each element in the molecule.
+    For example, this function will convert "H2O" to [["H", 2], ["O", 1]]
+    and "PO4H2(CH2)12CH3" to [["P", 1], ["O", 4], ["H", 29], ["C", 13]]
     Parameters
-        formula is a string that contains a chemical formula
-        periodic_table_dict is the compound dictionary returned
+        formula: a string that contains a chemical formula
+        periodic_table_dict: the compound dictionary returned
             from make_periodic_table
     Return: a compound list that contains chemical symbols and
         quantities like this [["Fe", 2], ["O", 3]]
@@ -158,13 +160,13 @@ def parse_formula(formula, periodic_table_dict):
         if index < len(formula) and formula[index].isdecimal():
             start = index
             index += 1
-            while index<len(formula) and formula[index].isdecimal():
+            while index < len(formula) and formula[index].isdecimal():
                 index += 1
             quant = int(formula[start:index])
         return quant, index
 
-    def get_quant(elem_dict, symbol):
-        return 0 if symbol not in elem_dict else elem_dict[symbol]
+    def get_quant(elems, symbol):
+        return 0 if symbol not in elems else elems[symbol]
 
     def parse_r(formula, index, level):
         start_index = index
@@ -173,12 +175,11 @@ def parse_formula(formula, periodic_table_dict):
         while index < len(formula):
             ch = formula[index]
             if ch == "(":
-                group_dict, index = parse_r(formula,index+1,level+1)
+                group_dict, index = parse_r(formula, index+1, level+1)
                 quant, index = parse_quant(formula, index)
                 for symbol in group_dict:
                     prev = get_quant(elem_dict, symbol)
-                    curr = prev + group_dict[symbol] * quant
-                    elem_dict[symbol] = curr
+                    elem_dict[symbol] = prev + group_dict[symbol] * quant
             elif ch.isalpha():
                 symbol = formula[index:index+2]
                 if symbol in periodic_table_dict:
@@ -188,16 +189,16 @@ def parse_formula(formula, periodic_table_dict):
                     if symbol in periodic_table_dict:
                         index += 1
                     else:
-                        raise FormulaError("invalid formula, "
-                            f"unknown element symbol: {symbol}",
+                        raise FormulaError(
+                            "invalid formula, unknown element symbol:",
                             formula, index)
                 quant, index = parse_quant(formula, index)
                 prev = get_quant(elem_dict, symbol)
                 elem_dict[symbol] = prev + quant
             elif ch == ")":
                 if level == 0:
-                    raise FormulaError("invalid formula, "
-                        "unmatched close parenthesis",
+                    raise FormulaError(
+                        "invalid formula, unmatched close parenthesis:",
                         formula, index)
                 level -= 1
                 index += 1
@@ -206,14 +207,14 @@ def parse_formula(formula, periodic_table_dict):
                 if ch.isdecimal():
                     # Decimal digit not preceded by an
                     # element symbol or close parenthesis
-                    message = "invalid formula"
+                    message = "invalid formula:"
                 else:
                     # Illegal character: [^()0-9a-zA-Z]
-                    message = "invalid formula, illegal character"
+                    message = "invalid formula, illegal character:"
                 raise FormulaError(message, formula, index)
         if level > 0 and level >= start_level:
-            raise FormulaError("invalid formula, "
-                "unmatched open parenthesis",
+            raise FormulaError(
+                "invalid formula, unmatched open parenthesis:",
                 formula, start_index - 1)
         return elem_dict, index
 
@@ -236,41 +237,36 @@ QUANTITY_INDEX = 1
 def compute_molar_mass(symbol_quantity_list, periodic_table_dict):
     """Compute and return the total molar mass of all the
     elements listed in symbol_quantity_list.
-
     Parameters
-        symbol_quantity_list is a compound list returned
-            from the parse_formula function. Each small
+        symbol_quantity_list is a compound list. Each small
             list in symbol_quantity_list has this form:
             ["symbol", quantity].
-        periodic_table_dict is the compound dictionary
-            returned from make_periodic_table.
-    Return: the total molar mass of all the elements in
-        symbol_quantity_list.
-
+        periodic_table_dict is the compound dictionary returned
+            from make_periodic_table.
+        Return: the total molar mass of all the elements in
+            symbol_quantity_list.
     For example, if symbol_quantity_list is [["H", 2], ["O", 1]],
     this function will calculate and return
     atomic_mass("H") * 2 + atomic_mass("O") * 1
     1.00794 * 2 + 15.9994 * 1
     18.01528
     """
-    
-    total_molar_mass = 0
-        
-    for element in symbol_quantity_list:
-         symbol = element[0]
-         quant = element[1]   
-    # Do the following for each each inner list in the
-    # compound symbol_quantity_list:
-        # Separate the inner list into symbol and quantity.
-        # Get the atomic mass for the symbol from the dictionary.
-        # Multiply the atomic mass by the quantity.
-        # Add the product into the total molar mass.
-    atomic_mass = periodic_table_dict[simbol][1]
-    atomic_quant = atomic_mass * quant
-    
-    total_molar_mass += atomic_quant
-    # Return the total molar mass.
-    return total_molar_mass
+    total_mass = 0 
 
+    for element in symbol_quantity_list:
+        symbol = element[0]
+        quantity = element[1]
+
+        # For each list in the compound symbol_quantity_list:
+            # Separate the list into symbol and quantity.
+            # Get the atomic mass for the symbol from the dictionary.
+            # Multiply the atomic mass by the quantity.
+            # Add the product into the total mass.
+        atomic_mass = periodic_table_dict[symbol][1]
+        atomic_quantity = atomic_mass * quantity
+        # symbol_quantity_list[0] * 2 + symbol_quantity_list[1] * 1
+        total_mass += atomic_quantity
+        # Return the total mass.
+    return total_mass
 if __name__ == '__main__':
     main()
