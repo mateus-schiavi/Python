@@ -1,8 +1,13 @@
 import matplotlib.pyplot as plt 
-data = [1+2j, -1+4j, 4+3j, -4, 2-1j, 3+9j, -2+6j, 5] 
-x = [ele.real for ele in data] 
-y = [ele.imag for ele in data] 
-plt.scatter(x, y) 
-plt.ylabel('Imaginary') 
-plt.xlabel('Real') 
-plt.show() 
+import numpy as np 
+import cmath
+
+x = int(input("Enter the real number of the equation: "))
+y = int(input("Enter the imaginary number of the equation: "))
+print(complex(x + 1j*y))
+ 
+plt.plot(x, y, '-.') 
+plt.ylabel("Imaginary")
+plt.xlabel("Real") 
+plt.title("Solving Complex Equations") 
+plt.show()  
