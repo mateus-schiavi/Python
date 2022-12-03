@@ -3,7 +3,7 @@ import numpy as np
 import cmath
 import pytest
 
-def function_one():
+def test_one():
     data = np.arange(12) + 1j*np.arange(-4, 8) 
     x = data.real 
     y = data.imag 
@@ -12,7 +12,7 @@ def function_one():
     plt.xlabel('Real') 
     plt.show()
 
-def function_two():
+def test_two():
     data = np.array([1+5j, 2-1j, -1j, -8, 4+3j, 3+2j, -2+6j, 5]) 
     x = data.real 
     y = data.imag 
@@ -21,7 +21,7 @@ def function_two():
     plt.xlabel('Real') 
     plt.show()
     
-def function_three():
+def test_three():
     data = np.arange(10) + 1j*np.arange(0,10)
     x = data.real
     y = data.imag
