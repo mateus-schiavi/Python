@@ -1,14 +1,18 @@
 import matplotlib.pyplot as plt 
 import numpy as np 
-  
-  
-x = np.array([1, 2, 3, 4]) 
-y = x*2
+import cmath
+
+x = int(input("Enter the real number of the equation: "))
+y = int(input("Enter the imaginary number of the equation: "))
+print(complex(x + 1j*y))
+
+x1 = np.array([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) 
+y1 = x1 + 1j
   
 plt.plot(x, y) 
-plt.xlabel("X-axis") 
-plt.ylabel("Y-axis") 
-plt.title("Any suitable title") 
+plt.xlabel("Real") 
+plt.ylabel("Imaginary") 
+plt.title("Solving Complex Equations") 
 plt.show()  
 plt.figure() 
 x1 = [2, 4, 6, 8] 
