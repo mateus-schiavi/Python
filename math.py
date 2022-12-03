@@ -7,6 +7,7 @@ Purpose: Use functions to calculate temperatue.
 
 import math
 
+
 def result(V,T,degree):
     if degree.upper() == 'C':
         T = (T * (9/5)) + 32
