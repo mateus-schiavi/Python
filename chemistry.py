@@ -1,6 +1,5 @@
 import math
 
-
 def make_periodic_table(): 
     periodic_table_list = {
         
