@@ -78,7 +78,7 @@ print(f'The higher life expectancy is {higher} from {higher_land} in {higher_twe
 print(f'The lower life expectancy is {lower} from {lower_land} in {lower_twelvemonth}')
 print('|-|')
 print('|-|')
-print('|-|')
+print('|-|') 
 print('|-|')
 print(f'For the year {chosen_twelvemonth}: ')
 print(f'The higher life expectancy was in {chosen_landhigher} with {chosen_higher}')
