@@ -10,7 +10,7 @@ def get_noun():
     global noun_var
     global determiner_var
     determiner_var = 0
-
+ 
     nouns1 = ['I']
     nouns2 = ['vacation','job','Book or Mormon', 'butterfly','dog','homework','home']
     nouns3a = ['people','years','days','things']

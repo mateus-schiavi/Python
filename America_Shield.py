@@ -12,7 +12,7 @@ def func_1(x, y):
     ca.pensize(2)
     ca.speed(10)
 
-
+ 
 def circle(r, color):
     x_point = 0
     y_pont = -r

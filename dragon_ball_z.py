@@ -1,7 +1,7 @@
 import turtle
 
 turtle.bgcolor('red')
-
+ 
 neck = turtle.Turtle()
 neck.speed(20)
 neck.color("black","#FFD7C1")

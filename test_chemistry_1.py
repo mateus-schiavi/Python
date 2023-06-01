@@ -2,7 +2,7 @@ from chemistry import make_periodic_table, \
     parse_formula, compute_molar_mass, FormulaError
 from pytest import approx
 import pytest
-
+ 
 
 # These are the indexes of the
 # elements in the periodic table.

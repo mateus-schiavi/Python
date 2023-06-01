@@ -9,7 +9,7 @@ higher_twelvemonth = ''
 lives_computed = 0
 range_lives = 0
 number_select_twelvemonth = 0
-
+ 
 #Variables for the chosen year
 chosen_twelvemonth = int(input('Type the year you want to know about: '))
 chosen_lower = 1024

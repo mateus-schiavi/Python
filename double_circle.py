@@ -5,7 +5,7 @@ wn.setup(600,600)
 wn.bgcolor("white")
 s=turtle.Turtle()
 r=10
-
+ 
 for i in range(20):
     s.circle(r*i)
     s.penup()

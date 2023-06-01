@@ -20,7 +20,7 @@ def test_get_determiner():
         word = get_determiner(2).lower()
 
         assert word in plural_determiners
-
+ 
 
 def test_get_noun():
 

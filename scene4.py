@@ -6,7 +6,7 @@ def main():
     # Call the start_drawing function in the draw2d.py
     # library which will open a window and create a canvas.
     canvas = start_drawing("Repeated Shapes", 600, 375)
-
+ 
     diameter = 15
     space = 5
     interval = diameter + space

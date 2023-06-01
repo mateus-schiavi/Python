@@ -3,7 +3,7 @@
 from draw2d import \
     start_drawing, draw_line, draw_oval, draw_arc, \
     draw_rectangle, draw_polygon, draw_text, finish_drawing
-
+ 
 
 def main():
     # Width and height of the scene in pixels

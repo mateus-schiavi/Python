@@ -17,7 +17,7 @@ def main():
             
             print(sentence)
 
-
+ 
 def get_determiner(x):
     if x == 1:
         words = ['a', 'one', 'the']

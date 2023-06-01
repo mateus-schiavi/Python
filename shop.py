@@ -16,7 +16,7 @@ print("\nThe shopping list with indexes is:")
 for i in range(len(shopping_list)):
     item = shopping_list[i]
     print(f"{i}. {item}")
-
+ 
     # I could have just put shopping_list[i] directly in my print statement
     # rather than creating a separate variable if I wanted. I decided to do it
     # this way to make it easier to read.

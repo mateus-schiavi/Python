@@ -4,7 +4,7 @@ drawer = Turtle()
 s = Screen()
 
 s.bgcolor("black")
-
+ 
 drawer.penup()
 drawer.setposition(-20,-350)
 drawer.pendown()

@@ -1,5 +1,5 @@
 import turtle
-
+ 
 ninja = turtle.Turtle()
 
 ninja.speed(576)

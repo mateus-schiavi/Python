@@ -9,7 +9,7 @@ def main():
     # Measurement for window
     scene_width = 800
     scene_height = 500
-
+ 
     # Creating a window
     canvas = start_drawing("Scene", scene_width, scene_height)
 

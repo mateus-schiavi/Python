@@ -11,3 +11,4 @@ plt.ylabel("Imaginary")
 plt.xlabel("Real") 
 plt.title("Solving Complex Equations") 
 plt.show()  
+ 

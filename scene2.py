@@ -6,7 +6,7 @@ from draw2d import \
 def main():
     scene_width = 600
     scene_height = 375
-
+ 
     # Call the start_drawing function in the draw2d.py
     # library which will open a window and create a canvas.
     canvas = start_drawing("Grid", scene_width, scene_height)

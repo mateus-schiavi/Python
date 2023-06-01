@@ -27,7 +27,7 @@ from numbers import Number
 import math
 
 _started = False
-
+ 
 
 def start_drawing(title, width, height):
     """Create a window with a canvas where a program can draw

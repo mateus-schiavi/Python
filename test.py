@@ -21,7 +21,7 @@ youngest_age = 9999
 
 # This will keep track of the person with the youngest age
 youngest_name = ""
-
+ 
 # Go through each person in the list
 for person_line in people:
 

@@ -14,7 +14,7 @@ def extract_city(full_address):
     city = full_address[mid_comma_index + 1 : last_comma_index]
     city = city.strip()
     return city
-
+ 
 
 def extract_state(full_address):
     """Extract and return the two letter abbreviation for

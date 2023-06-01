@@ -1,5 +1,5 @@
 import turtle
-
+ 
 draw = turtle.Turtle()
 
 def curve():

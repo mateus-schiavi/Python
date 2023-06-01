@@ -20,7 +20,7 @@ def test_two():
     plt.ylabel('Imaginary') 
     plt.xlabel('Real') 
     plt.show()
-    
+     
 def test_three():
     data = np.arange(10) + 1j*np.arange(0,10)
     x = data.real

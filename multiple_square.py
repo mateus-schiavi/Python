@@ -4,7 +4,7 @@ wn = turtle.Screen()
 wn.setup(400,600)
 wn.bgcolor("white")
 s = turtle.Turtle()
-
+ 
 for i in range(4):
     s.begin_fill()
     s.forward(100)

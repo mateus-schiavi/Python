@@ -6,7 +6,7 @@ def setup(x, y):
     turtle.sety(y)
     print(x, y)
 
-
+ 
 class Draw_Pikachu:
 
     def __init__(self):

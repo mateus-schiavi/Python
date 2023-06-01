@@ -15,7 +15,7 @@ draw.begin_fill()
 draw.penup()
 draw.forward(190)
 draw.pendown()
-
+ 
 # Hair
 draw.right(25)
 draw.forward(60)
