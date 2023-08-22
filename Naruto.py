@@ -2,7 +2,7 @@ import turtle
 
 turtle.Screen().bgcolor("#eeeeee")
 draw = turtle.Turtle()
-
+     
 draw.pencolor("red")
 draw.pensize(8)
 draw.hideturtle()
